@@ -16,12 +16,6 @@ const contactInfo = [
     value: "varunsantu2002@gmail.com",
     href: "mailto:varunsantu2002@gmail.com",
   },
-  // {
-  //   icon: Phone,
-  //   title: "Phone",
-  //   value: "+1 (555) 123-4567",
-  //   href: "tel:+15551234567",
-  // },
   {
     icon: MapPin,
     title: "Location",
@@ -29,6 +23,9 @@ const contactInfo = [
     href: "#",
   },
 ]
+
+// <-- Put your deployed Apps Script Web App URL here -->
+const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw3LGZcsgJhbT6DCDL5Tsy-8LQQVeuPf2WYB4hYO0WiKEAvJilbp9LkbT-SBT4xu3sk9A/exec"
 
 export function ContactSection() {
   const ref = useRef(null)
@@ -40,13 +37,46 @@ export function ContactSection() {
     e.preventDefault()
     setIsSubmitting(true)
 
-    // Simulate form submission
-    await new Promise((resolve) => setTimeout(resolve, 2000))
+    try {
+      const form = e.currentTarget
+      const formData = new FormData(form)
+      const payload = {
+        name: formData.get("Name")?.toString() || "",
+        email: formData.get("Email")?.toString() || "",
+        message: formData.get("Message")?.toString() || "",
+      }
 
-    setIsSubmitting(false)
-    setIsSubmitted(true)
+      const res = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      })
 
-    setTimeout(() => setIsSubmitted(false), 5000)
+      // Try to parse JSON safely
+      let json: any = {}
+      try {
+        json = await res.json()
+      } catch (err) {
+        // ignore parse error
+      }
+
+      if (res.ok && json.status === "success") {
+        setIsSubmitted(true)
+        form.reset()
+        // keep "Message Sent!" for 5s
+        setTimeout(() => setIsSubmitted(false), 5000)
+      } else {
+        console.error("Submit failed:", json)
+        alert("Sorry, something went wrong. Please try again later.")
+      }
+    } catch (err) {
+      console.error("Submit error:", err)
+      alert("Sorry, something went wrong. Please try again later.")
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   return (
@@ -125,7 +155,7 @@ export function ContactSection() {
                     <label htmlFor="name" className="text-sm font-medium text-foreground">
                       Name
                     </label>
-                    <Input id="name" placeholder="Name" required className="bg-secondary/50" />
+                    <Input id="name" name="name" placeholder="Name" required className="bg-secondary/50" />
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="email" className="text-sm font-medium text-foreground">
@@ -133,6 +163,7 @@ export function ContactSection() {
                     </label>
                     <Input
                       id="email"
+                      name="email"
                       type="email"
                       placeholder="Email"
                       required
@@ -140,13 +171,6 @@ export function ContactSection() {
                     />
                   </div>
                 </div>
-                
-                {/* <div className="space-y-2">
-                  <label htmlFor="subject" className="text-sm font-medium text-foreground">
-                    Subject
-                  </label>
-                  <Input id="subject" placeholder="Project Inquiry" required className="bg-secondary/50" />
-                </div> */}
 
                 <div className="space-y-2">
                   <label htmlFor="message" className="text-sm font-medium text-foreground">
@@ -154,6 +178,7 @@ export function ContactSection() {
                   </label>
                   <Textarea
                     id="message"
+                    name="message"
                     placeholder="Fell free to text..."
                     rows={5}
                     required
