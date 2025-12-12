@@ -16,6 +16,12 @@ const contactInfo = [
     value: "varunsantu2002@gmail.com",
     href: "mailto:varunsantu2002@gmail.com",
   },
+  // {
+  //   icon: Phone,
+  //   title: "Phone",
+  //   value: "+1 (555) 123-4567",
+  //   href: "tel:+15551234567",
+  // },
   {
     icon: MapPin,
     title: "Location",
@@ -24,56 +30,45 @@ const contactInfo = [
   },
 ]
 
-// <-- Put your deployed Apps Script Web App URL here -->
-const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbw3LGZcsgJhbT6DCDL5Tsy-8LQQVeuPf2WYB4hYO0WiKEAvJilbp9LkbT-SBT4xu3sk9A/exec"
-
 export function ContactSection() {
   const ref = useRef(null)
   const isInView = useInView(ref, { once: true, margin: "-100px" })
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [isSubmitted, setIsSubmitted] = useState(false)
+  const [error, setError] = useState<string | null>(null)
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault()
     setIsSubmitting(true)
+    setError(null)
+
+    const formData = {
+      name: (e.currentTarget.elements.namedItem("name") as HTMLInputElement).value,
+      email: (e.currentTarget.elements.namedItem("email") as HTMLInputElement).value,
+      subject: (e.currentTarget.elements.namedItem("subject") as HTMLInputElement).value,
+      message: (e.currentTarget.elements.namedItem("message") as HTMLTextAreaElement).value,
+    }
 
     try {
-      const form = e.currentTarget
-      const formData = new FormData(form)
-      const payload = {
-        name: formData.get("Name")?.toString() || "",
-        email: formData.get("Email")?.toString() || "",
-        message: formData.get("Message")?.toString() || "",
-      }
-
-      const res = await fetch(GOOGLE_APPS_SCRIPT_URL, {
+      const response = await fetch("/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify(payload),
+        body: JSON.stringify(formData),
       })
 
-      // Try to parse JSON safely
-      let json: any = {}
-      try {
-        json = await res.json()
-      } catch (err) {
-        // ignore parse error
+      if (!response.ok) {
+        throw new Error("Failed to submit form")
       }
 
-      if (res.ok && json.status === "success") {
-        setIsSubmitted(true)
-        form.reset()
-        // keep "Message Sent!" for 5s
-        setTimeout(() => setIsSubmitted(false), 5000)
-      } else {
-        console.error("Submit failed:", json)
-        alert("Sorry, something went wrong. Please try again later.")
-      }
+      setIsSubmitted(true)
+      ;(e.target as HTMLFormElement).reset()
+
+      setTimeout(() => setIsSubmitted(false), 5000)
     } catch (err) {
-      console.error("Submit error:", err)
-      alert("Sorry, something went wrong. Please try again later.")
+      console.error("[v0] Form submission error:", err)
+      setError("Failed to send message. Please try again or email directly.")
     } finally {
       setIsSubmitting(false)
     }
@@ -155,7 +150,7 @@ export function ContactSection() {
                     <label htmlFor="name" className="text-sm font-medium text-foreground">
                       Name
                     </label>
-                    <Input id="name" name="name" placeholder="Name" required className="bg-secondary/50" />
+                    <Input id="name" name="name" placeholder="John Doe" required className="bg-secondary/50" />
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="email" className="text-sm font-medium text-foreground">
@@ -165,11 +160,24 @@ export function ContactSection() {
                       id="email"
                       name="email"
                       type="email"
-                      placeholder="Email"
+                      placeholder="john@example.com"
                       required
                       className="bg-secondary/50"
                     />
                   </div>
+                </div>
+
+                <div className="space-y-2">
+                  <label htmlFor="subject" className="text-sm font-medium text-foreground">
+                    Subject
+                  </label>
+                  <Input
+                    id="subject"
+                    name="subject"
+                    placeholder="Project Inquiry"
+                    required
+                    className="bg-secondary/50"
+                  />
                 </div>
 
                 <div className="space-y-2">
@@ -179,12 +187,18 @@ export function ContactSection() {
                   <Textarea
                     id="message"
                     name="message"
-                    placeholder="Fell free to text..."
+                    placeholder="Tell me about your project..."
                     rows={5}
                     required
                     className="bg-secondary/50 resize-none"
                   />
                 </div>
+
+                {error && (
+                  <div className="rounded-lg bg-destructive/10 border border-destructive/50 p-3 text-sm text-destructive">
+                    {error}
+                  </div>
+                )}
 
                 <Button
                   type="submit"
