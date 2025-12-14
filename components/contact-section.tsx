@@ -122,7 +122,7 @@ export function ContactSection() {
               ))}
             </div>
 
-            <motion.div
+            {/* <motion.div
               className="mt-8 glass rounded-2xl p-6"
               initial={{ opacity: 0, y: 20 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
@@ -133,7 +133,7 @@ export function ContactSection() {
                 I typically respond within 24 hours. For urgent inquiries, feel free to call directly or send a message
                 on LinkedIn.
               </p>
-            </motion.div>
+            </motion.div> */}
           </motion.div>
 
           <motion.div
@@ -141,7 +141,7 @@ export function ContactSection() {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.4 }}
           >
-            <form onSubmit={handleSubmit} className="glass rounded-2xl p-8">
+            {/* <form onSubmit={handleSubmit} className="glass rounded-2xl p-8">
               <h3 className="mb-6 text-2xl font-bold text-foreground">Send a Message</h3>
 
               <div className="space-y-6">
@@ -223,8 +223,8 @@ export function ContactSection() {
                     </>
                   )}
                 </Button>
-              </div>
-            </form>
+              </div> */}
+            {/* </form> */}
           </motion.div>
         </div>
       </div>

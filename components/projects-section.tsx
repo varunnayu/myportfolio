@@ -13,7 +13,7 @@ const projects = [
       "A full-featured login page with basic UI/UX, and responsive design.",
     image: "./login.png",
     tags: ["HTML", "CSS", "JavaScript", "Firebase"],
-    github: "https://github.com/varunnayu/login-page",
+    // github: "https://github.com/varunnayu/login-page",
     live: "https://varunnayu.github.io/login-page/",
     featured: true,
   },
@@ -21,16 +21,16 @@ const projects = [
     title: "Personal Password Manager",
     description: "Real-time personal password manager with a master password and firebase authentication.",
     image: "./password-manager.png",
-    tags: ["React", "OpenAI", "Socket.io", "Node.js"],
-    github: "https://github.com/varunnayu/classy",
-    live: "https://varunnayu.github.io/classy/",
+    tags: [ "React", "Firebase", "Tailwind css","Authentication"],
+    // github: "https://github.com/varunnayu/classy",
+    live: "https://classy-phi.vercel.app/login.html",
     featured: true,
   },
   {
     title: "Decentralised academic certificate issued and verification system",
     description: "A blockchain-based system for issuing and verifying academic certificates securely and transparently.",
     image: "./certifiy.png",
-    tags: ["Vue.js", "GraphQL", "MongoDB", "Docker"],
+    tags: ["React", "Ethereum", "Solidity", "blockchain"],
     // github: "https://github.com",
     live: "https://certify-chain-jet.vercel.app/",
     featured: true,
@@ -116,10 +116,10 @@ export function ProjectsSection() {
                     className="border-foreground/20 bg-background/80 hover:bg-background"
                     asChild
                   >
-                    <a href={project.github} target="_blank" rel="noopener noreferrer">
+                    {/* <a href={project.github} target="_blank" rel="noopener noreferrer">
                       <Github className="mr-1 h-4 w-4" />
                       Code
-                    </a>
+                    </a> */}
                   </Button>
                 </div>
               </div>

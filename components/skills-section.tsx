@@ -21,7 +21,7 @@ const skillCategories = [
       // { name: "Express", level: 88 },
       { name: "Python", level: 80 },
       { name: "SQL", level: 85 },
-      { name: "MongoDB", level: 82 },
+      { name: "MongoDB/PHP", level: 82 },
     ],
   },
   {
