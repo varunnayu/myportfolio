@@ -86,7 +86,7 @@ export function AboutSection() {
             <h3 className="mb-6 text-2xl font-bold md:text-3xl">A passionate developer crafting digital experiences</h3>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                I'm a Full Stack Developer with over 5 years of experience in building web applications. My journey in
+                I'm a Full Stack Developer with an experience of building web applications. My journey in
                 tech started with a curiosity about how things work on the internet, and it has evolved into a passion
                 for creating impactful digital solutions.
               </p>
@@ -98,6 +98,11 @@ export function AboutSection() {
               <p>
                 When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or
                 sharing knowledge with the developer community through blog posts and talks.
+              </p>
+              <p>
+                I am currently pursuing a Data Science course, where I am building a strong foundation in Python,
+                data analysis, statistics, and machine learning. I am focused on developing practical skills to analyze data, derive insights, 
+                and solve real-world problems using modern data-driven techniques.
               </p>
             </div>
 
