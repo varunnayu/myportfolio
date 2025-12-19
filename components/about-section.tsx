@@ -61,7 +61,7 @@ export function AboutSection() {
               />
               <div className="relative overflow-hidden rounded-2xl border border-border">
                 <img
-                  src="./profile1.jpg"
+                  src="./profile-pic.jpg"
                   alt="Profile Picture"
                   className="h-full w-full object-cover"
                 />
