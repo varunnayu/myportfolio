@@ -10,16 +10,16 @@ const highlights = [
     title: "Clean Code",
     description: "Writing maintainable, scalable, and efficient code",
   },
-  {
-    icon: Palette,
-    title: "UI/UX Focus",
-    description: "Creating beautiful and intuitive user experiences",
-  },
-  {
-    icon: Rocket,
-    title: "Performance",
-    description: "Optimizing for speed and seamless interactions",
-  },
+  // {
+  //   icon: Palette,
+  //   title: "UI/UX Focus",
+  //   description: "Creating beautiful and intuitive user experiences",
+  // },
+  // {
+  //   icon: Rocket,
+  //   title: "Performance",
+  //   description: "Optimizing for speed and seamless interactions",
+  // },
   {
     icon: Heart,
     title: "Passion",
@@ -61,7 +61,7 @@ export function AboutSection() {
               />
               <div className="relative overflow-hidden rounded-2xl border border-border">
                 <img
-                  src="./profile1.jpg"
+                  src="./profile-pic2.jpg"
                   alt="Profile Picture"
                   className="h-full w-full object-cover"
                 />
@@ -86,18 +86,17 @@ export function AboutSection() {
             <h3 className="mb-6 text-2xl font-bold md:text-3xl">A passionate developer crafting digital experiences</h3>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                I'm a Full Stack Developer with over 5 years of experience in building web applications. My journey in
-                tech started with a curiosity about how things work on the internet, and it has evolved into a passion
-                for creating impactful digital solutions.
+                I am a motivated Electronics and Communication Engineering graduate with a strong academic background (CGPA 8.18) and hands-on experience in building real-world, impact-driven projects. 
+                My interests lie at the intersection of embedded systems, computer vision, mobile applications, and cloud-enabled solutions, where I enjoy transforming ideas into practical implementations.
               </p>
               <p>
-                I specialize in modern JavaScript frameworks, particularly React and Next.js for frontend development,
-                and Node.js for backend services. I believe in writing clean, maintainable code and creating intuitive
-                user experiences.
+                I have worked on diverse projects such as a wireless surveillance rover, a facial recognition attendance system, and an Android-based medical screening solution 
+                for cervical cancer, showcasing my ability to integrate hardware, software, and cloud technologies effectively. My technical skill set includes C,
+                 Python, embedded systems basics, OpenCV, Arduino, Firebase, and React Native, supported by strong problem-solving and communication skills.
               </p>
               <p>
-                When I'm not coding, you'll find me exploring new technologies, contributing to open-source projects, or
-                sharing knowledge with the developer community through blog posts and talks.
+                I am a quick learner and collaborative team player, recognized through multiple national and state-level project awards, publications in an international journal, and certifications from NPTEL, Cisco, and Google Cloud. I am eager to contribute to a growth-oriented 
+                organization where I can apply my technical knowledge, continuously learn, and create meaningful technological solutions.
               </p>
             </div>
 

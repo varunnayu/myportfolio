@@ -7,10 +7,10 @@ const _inter = Inter({ subsets: ["latin"] })
 const _jetbrainsMono = JetBrains_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Varun K T | Developer",
+  title: "Prakruthi | Portfolio",
   description:
     "Creative Full Stack Developer specializing in building exceptional digital experiences with modern technologies.",
-  keywords: ["developer", "portfolio", "full stack", "react", "next.js", "typescript"],
+  // keywords: ["developer", "portfolio", "full stack", "react", "next.js", "typescript"],
 }
 
 export const viewport = {

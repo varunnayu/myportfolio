@@ -31,7 +31,7 @@ export function HeroSection() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
             >
-              Hi, I'm <span className="text-gradient">Varun K T</span>
+              Hi, I'm <span className="text-gradient">Prakruthi R</span>
             </motion.h1>
 
             <motion.div
@@ -42,7 +42,7 @@ export function HeroSection() {
             >
               <span className="text-primary">{">"}</span>
               <TypewriterText
-                texts={["Developer", "UI/UX Enthusiast", "Problem Solver", "Tech Innovator"]}
+                texts={["Developer", "Problem Solver", "Tech Innovator"]}
               />
             </motion.div>
 
@@ -52,8 +52,7 @@ export function HeroSection() {
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
             >
-              I craft exceptional digital experiences with modern technologies. Passionate about building scalable
-              applications and creating intuitive user interfaces that make a difference.
+              I craft exceptional digital experiences with modern technologies. 
             </motion.p>
 
             <motion.div
@@ -134,7 +133,7 @@ export function HeroSection() {
               />
               <div className="relative aspect-square overflow-hidden rounded-full border-4 border-primary/50">
                 <img
-                  src="./hero1.png"
+                  src="./hero.png"
                   alt="hero image"
                   className="h-full w-full object-cover"
                 />
@@ -144,21 +143,21 @@ export function HeroSection() {
                 animate={{ y: [0, -10, 0] }}
                 transition={{ duration: 3, repeat: Number.POSITIVE_INFINITY }}
               >
-                <span className="font-mono text-sm text-primary">React.js</span>
+                <span className="font-mono text-sm text-primary">Embeded System</span>
               </motion.div>
               <motion.div
                 className="absolute -left-4 bottom-20 rounded-lg glass px-4 py-2"
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 4, repeat: Number.POSITIVE_INFINITY }}
               >
-                <span className="font-mono text-sm text-primary">UI/UX</span>
+                <span className="font-mono text-sm text-primary">C</span>
               </motion.div>
               <motion.div
                 className="absolute -bottom-2 right-12 rounded-lg glass px-4 py-2"
                 animate={{ y: [0, -8, 0] }}
                 transition={{ duration: 3.5, repeat: Number.POSITIVE_INFINITY }}
               >
-                <span className="font-mono text-sm text-primary">SQL</span>
+                <span className="font-mono text-sm text-primary">Python</span>
               </motion.div>
             </div>
           </motion.div>

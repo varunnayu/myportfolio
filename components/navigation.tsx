@@ -14,8 +14,8 @@ const navLinks = [
 ]
 
 const socialLinks = [
-  { icon: Github, href: "https://github.com/varunnayu", label: "GitHub" },
-  { icon: Linkedin, href: "https://www.linkedin.com/in/varun-k-t-a8312927b", label: "LinkedIn" },
+  { icon: Github, href: "https://github.com/rprakruthi08", label: "GitHub" },
+  { icon: Linkedin, href: "https://www.linkedin.com/in/prakruthi-r-b9498a24a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app", label: "LinkedIn" },
   // { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
 ]
 
@@ -55,7 +55,7 @@ export function Navigation() {
       >
         <div className="container mx-auto flex items-center justify-between px-6">
           <motion.a href="#home" className="text-2xl font-bold text-gradient" whileHover={{ scale: 1.05 }}>
-            {"<VK />"}
+            {"<P.R/>"}
           </motion.a>
 
           <div className="hidden items-center gap-8 md:flex">
