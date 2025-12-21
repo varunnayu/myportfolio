@@ -61,7 +61,7 @@ export function AboutSection() {
               />
               <div className="relative overflow-hidden rounded-2xl border border-border">
                 <img
-                  src="./profile-pic2.jpg"
+                  src="./profile1.jpg"
                   alt="Profile Picture"
                   className="h-full w-full object-cover"
                 />
@@ -86,8 +86,9 @@ export function AboutSection() {
             <h3 className="mb-6 text-2xl font-bold md:text-3xl">A passionate developer crafting digital experiences</h3>
             <div className="space-y-4 text-muted-foreground">
               <p>
-                I am a motivated Electronics and Communication Engineering graduate with a strong academic background (CGPA 8.18) and hands-on experience in building real-world, impact-driven projects. 
-                My interests lie at the intersection of embedded systems, computer vision, mobile applications, and cloud-enabled solutions, where I enjoy transforming ideas into practical implementations.
+                I'm a Full Stack Developer with over 5 years of experience in building web applications. My journey in
+                tech started with a curiosity about how things work on the internet, and it has evolved into a passion
+                for creating impactful digital solutions.
               </p>
               <p>
                 I have worked on diverse projects such as a wireless surveillance rover, a facial recognition attendance system, and an Android-based medical screening solution 
@@ -97,6 +98,11 @@ export function AboutSection() {
               <p>
                 I am a quick learner and collaborative team player, recognized through multiple national and state-level project awards, publications in an international journal, and certifications from NPTEL, Cisco, and Google Cloud. I am eager to contribute to a growth-oriented 
                 organization where I can apply my technical knowledge, continuously learn, and create meaningful technological solutions.
+              </p>
+              <p>
+                I am currently pursuing a Data Science course, where I am building a strong foundation in Python,
+                data analysis, statistics, and machine learning. I am focused on developing practical skills to analyze data, derive insights, 
+                and solve real-world problems using modern data-driven techniques.
               </p>
             </div>
 
