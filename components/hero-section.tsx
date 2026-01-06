@@ -46,14 +46,14 @@ export function HeroSection() {
               />
             </motion.div>
 
-            <motion.p
+            {/* <motion.p
               className="mx-auto mb-8 max-w-xl text-muted-foreground lg:mx-0"
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               transition={{ delay: 0.6 }}
             >
               I craft exceptional digital experiences with modern technologies. 
-            </motion.p>
+            </motion.p> */}
 
             <motion.div
               className="flex flex-wrap items-center justify-center gap-4 lg:justify-start"
